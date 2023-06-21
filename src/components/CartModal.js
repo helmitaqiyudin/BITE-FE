@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import * as Unicons from '@iconscout/react-unicons';
-import { useHistory } from 'react-router-dom';
 
 function CartModal({ cartItems, onClose }) {
   const cartSubtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);

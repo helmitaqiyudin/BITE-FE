@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import ProductCard from "@/components/ProductCard";
 import Searchbar from "@/components/Searchbar";
 import CartModal from "@/components/CartModal";
-import { searchProducts } from '@/services/searchService';
 import { getAllProducts } from '@/services/productService';
 
 export default function Home() {
@@ -20,27 +19,9 @@ export default function Home() {
   }, []);
 
   const fetchProducts = async () => {
-    // Simulating API call or data fetching
-    const dummyProducts = [
-      {
-        id: 1,
-        name: "Burger",
-        price: 50000,
-        description: "This is a burger",
-        image: "/assets/produk/flashsale1.png",
-      },
-      {
-        id: 2,
-        name: "Pizza",
-        price: 90000,
-        description: "This is a pizza",
-        image: "/assets/produk/flashsale2.png",
-      },
-      // Add more dummy products as needed
-    ];
-
-    setProducts(dummyProducts);
-    setFilteredProducts(dummyProducts);
+    const products = await getAllProducts();
+    setProducts(products);
+    setFilteredProducts(products);
   };
 
   const handleSearch = async (searchTerm) => {
