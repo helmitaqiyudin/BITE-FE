@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import RegistrationForm from '@/components/RegistrationForm'
+import LoginForm from '@/components/LoginForm'
 
-export default function Register() {
+export default function Login() {
 
     return (
         <main className="min-h-screen" style={{ backgroundImage: "url('assets/background/reglog.png')" }}>
@@ -18,7 +18,7 @@ export default function Register() {
                     </h2>
                 </div>
                 <div>
-                    <RegistrationForm />
+                    <LoginForm />
                 </div>
             </div>
 

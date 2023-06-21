@@ -1,27 +1,21 @@
 'use client'
 import { useState } from 'react'
-import { registeruser } from '@/services/registerUser'
+import { loginUser } from '@/services/userService'
 
-export default function RegistrationForm() {
-  const [name, setName] = useState('')
+export default function LoginForm() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const handleRegistration = async () => {
-    await registeruser(name, email, password)
+  const handleLogin = async () => {
+    try {
+      const userData = await loginUser(email, password);
+    } catch (error) {
+        console.log(error);
+    }
   }
   
   return (
     <div className='flex flex-col gap-1 font-md'>
-      <label htmlFor='name'>Name</label>
-      <input
-        className='border-1 border-black rounded-lg text-black'
-        type='name'
-        name='name'
-        id='name'
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
       <label htmlFor='email'>Email</label>
       <input
         className='border-1 border-black rounded-lg text-black'
@@ -40,7 +34,7 @@ export default function RegistrationForm() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleRegistration} className='bg-red-500 rounded-lg mt-5'>Register</button>
+      <button onClick={handleLogin} className='bg-red-500 rounded-lg mt-5'>Login</button>
     </div>
   )
 }
