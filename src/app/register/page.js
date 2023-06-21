@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import RegistrationForm from '@/components/RegistrationForm'
+import Link from 'next/link'
 
 export default function Register() {
 
@@ -19,6 +20,13 @@ export default function Register() {
                 </div>
                 <div>
                     <RegistrationForm />
+                    {/* Already have an account button */}
+                    <div className="flex justify-center mt-5">
+                        <p className="text-sm">Already have an account?</p>
+                        <Link href="/login">
+                            <button className="text-sm text-red-500 ml-1">Login</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
 

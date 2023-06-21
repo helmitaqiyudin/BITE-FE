@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import LoginForm from '@/components/LoginForm'
+import Link from 'next/link'
 
 export default function Login() {
 
@@ -19,6 +20,13 @@ export default function Login() {
                 </div>
                 <div>
                     <LoginForm />
+                    {/* Dont have an account button */}
+                    <div className="flex justify-center mt-5">
+                        <p className="text-sm">Don't have an account?</p>
+                        <Link href="/register">
+                            <button className="text-sm text-red-500 ml-1">Register</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
 
