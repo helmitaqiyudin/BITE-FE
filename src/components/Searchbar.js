@@ -1,19 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Searchbar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    if (searchTerm.length >= 3 || searchTerm === '') {
+      const searchTimeout = setTimeout(() => {
+        onSearch(searchTerm);
+      }, 300);
+
+      return () => clearTimeout(searchTimeout);
+    }
+  }, [searchTerm, onSearch]);
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    onSearch(searchTerm);
-  };
-
   return (
-    <form className="flex items-center justify-center p-5 bg-white" onSubmit={handleSearch}>
+    <form className="flex items-center justify-center p-5 bg-white">
       <input
         type="text"
         placeholder="Search..."
@@ -21,9 +26,6 @@ function Searchbar({ onSearch }) {
         onChange={handleInputChange}
         className="border border-gray-300 rounded px-3 py-2 w-[500px] text-black"
       />
-      <button type="submit" className="ml-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
-        Search
-      </button>
     </form>
   );
 }
