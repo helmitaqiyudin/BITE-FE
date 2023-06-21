@@ -1,4 +1,5 @@
 import React from 'react'
+import * as Unicons from '@iconscout/react-unicons'
 
 function Footer() {
     return (
@@ -12,36 +13,24 @@ function Footer() {
                         <div className="flex mt-5">
                             <a href="">
                                 <div className="bg-red-500 rounded-md h-[50px] w-[50px] flex items-center justify-center mr-5 hover:text-red-500 hover:bg-white">
-                                    <ion-icon
-                                        name="logo-facebook"
-                                        className="text-black text-2xl"
-                                    />
+                                    <Unicons.UilFacebookF className="text-black text-2xl" />
                                 </div>
                             </a>
                             <a href="">
                                 <div className="bg-red-500 rounded-md h-[50px] w-[50px] flex items-center justify-center mr-5 hover:text-red-500 hover:bg-white">
-                                    <ion-icon
-                                        name="logo-instagram"
-                                        className="text-black text-2xl"
-                                    />
+                                    <Unicons.UilInstagramAlt className="text-black text-2xl" />
                                 </div>
                             </a>
                             <a href="">
                                 <div>
                                     <div className="bg-red-500 rounded-md h-[50px] w-[50px] flex items-center justify-center mr-5 hover:text-red-500 hover:bg-white">
-                                        <ion-icon
-                                            name="logo-twitter"
-                                            className="text-black text-2xl"
-                                        />
+                                        <Unicons.UilTwitterAlt className="text-black text-2xl" />
                                     </div>
                                 </div>
                             </a>
                             <a href="">
                                 <div className="bg-red-500 rounded-md h-[50px] w-[50px] flex items-center justify-center mr-5 hover:text-red-500 hover:bg-white">
-                                    <ion-icon
-                                        name="logo-linkedin"
-                                        className="text-black text-2xl"
-                                    />
+                                    <Unicons.UilLinkedinAlt className="text-black text-2xl" />
                                 </div>
                             </a>
                         </div>
@@ -96,5 +85,4 @@ function Footer() {
         </div>
     )
 }
-<script src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.js"></script>
 export default Footer

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import * as Unicons from '@iconscout/react-unicons'
 
 function Navbar({pageTitle}) {
     return (
@@ -12,16 +13,15 @@ function Navbar({pageTitle}) {
                 <div className='text-2xl font-bold text-red-600'>
                     {pageTitle}
                 </div>
-                <div className='space-x-7'>
+                <div className='space-x-7 flex'>
                     <Link href='/cart' >
-                        <ion-icon name="cart-outline" size="large"></ion-icon>
+                        <Unicons.UilShoppingCart className="text-2xl" />
                     </Link>
                     <Link href= '/orderstatus'>
-                        <ion-icon name="receipt-outline" size="large"></ion-icon>
+                        <Unicons.UilFileAlt className="text-2xl" />
                     </Link>
                 </div>
             </div>
-            <script src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.js"></script>
         </nav>
     )
 }
