@@ -15,6 +15,9 @@ function CartModal({ cartItems, onClose }) {
     };
     setOrderSummary(summary);
 
+    // Set the order summary in localStorage
+    localStorage.setItem('orderSummary', JSON.stringify(summary));
+
     // Navigate to the checkout page
     window.location.href = '/checkout';
   };
@@ -33,7 +36,7 @@ function CartModal({ cartItems, onClose }) {
             {cartItems.map((item) => (
               <div key={item.id} className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-4">
-                  <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded" />
+                  <img src={item.img} alt={item.name} className="w-16 h-16 object-cover rounded" />
                   <div>
                     <div className="text-lg font-semibold text-black">{item.name}</div>
                     <div className="text-gray-500">Rp. {item.price} per piece</div>

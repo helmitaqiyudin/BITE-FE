@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import OrderModal from './OrderModal';
 
 function ProductCard({ product, cartItems, setCartItems }) {
-  const { id, name, price, description, image } = product;
+  const { id, name, price, description, img } = product;
   const [quantity, setQuantity] = useState(1);
   const [showModal, setShowModal] = useState(false);
 
@@ -33,8 +33,8 @@ function ProductCard({ product, cartItems, setCartItems }) {
   };
 
   return (
-    <div className="bg-white p-4 h-[300px]">
-      <img src={image} alt={name} className="w-full h-[200px] object-cover mb-4" />
+    <div className="bg-white p-4 h-[350px]">
+      <img src={img} alt={name} className="w-full h-[200px] object-cover mb-4 rounded-md" />
       <div className="flex justify-between">
         <div>
           <h3 className="text-xl font-semibold">{name}</h3>

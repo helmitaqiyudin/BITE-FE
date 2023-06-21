@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { registeruser } from '@/services/registerUser'
+import { registerUser } from '@/services/registerUser'
 
 export default function RegistrationForm() {
   const [name, setName] = useState('')
@@ -8,7 +8,7 @@ export default function RegistrationForm() {
   const [password, setPassword] = useState('')
 
   const handleRegistration = async () => {
-    await registeruser(name, email, password)
+    await registerUser(name, email, password)
   }
   
   return (

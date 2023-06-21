@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import  * as Unicons from '@iconscout/react-unicons';
 
 function OrderModal({ product, quantity, setQuantity, handleAddToCart, handleClose }) {
-  const { name, image } = product;
+  const { name, img } = product;
   const [cutleryRequested, setCutleryRequested] = useState(false);
   const [specialInstructions, setSpecialInstructions] = useState('');
 
@@ -41,11 +41,11 @@ function OrderModal({ product, quantity, setQuantity, handleAddToCart, handleClo
         >
             <Unicons.UilTimes size="50" />
         </button>
-        <div className="flex items-center mb-4">
-          <img src={image} alt={name} className="w-12 h-12 rounded-md mr-4" />
+        <div className="flex flex-col items-center mb-4">
+          <img src={img} alt={name} className=" h-[300px] rounded-md mr-4" />
           <h3 className="text-xl font-semibold">{name}</h3>
         </div>
-        <div className="flex items-center mb-4">
+        <div className="flex items-center justify-center mb-4">
           <button
             onClick={handleDecreaseQuantity}
             className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-l-md h-10"
