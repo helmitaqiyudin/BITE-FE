@@ -66,7 +66,7 @@ function CheckoutPage() {
               Name:
             </label>
             <input
-              className="border rounded px-4 py-2 w-full"
+              className="border rounded px-4 py-2 w-full text-black"
               type="text"
               id="name"
               name="name"
@@ -80,7 +80,7 @@ function CheckoutPage() {
               Address:
             </label>
             <textarea
-              className="border rounded px-4 py-2 w-full"
+              className="border rounded px-4 py-2 w-full text-black"
               id="address"
               name="address"
               placeholder="Enter your address"
@@ -93,7 +93,7 @@ function CheckoutPage() {
               Phone:
             </label>
             <input
-              className="border rounded px-4 py-2 w-full"
+              className="border rounded px-4 py-2 w-full text-black"
               type="tel"
               id="phone"
               name="phone"
