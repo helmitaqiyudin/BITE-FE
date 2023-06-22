@@ -113,8 +113,7 @@ function Payment() {
           </button>
         </div>
 
-            {/* Bank Bca - 5025201152 */}
-            {/* Bank Mandiri - 1234567890 */}
+
           <div>
             <h4 className="font-semibold">Bank Transfer:</h4>
             <div className="flex items-center mb-4">
