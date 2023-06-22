@@ -9,7 +9,6 @@ function CheckoutPage() {
     const summary = localStorage.getItem('orderSummary');
     if (summary) {
       setOrderSummary(JSON.parse(summary));
-      localStorage.removeItem('orderSummary');
     }
   }, []);
 
